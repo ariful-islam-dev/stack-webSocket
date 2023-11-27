@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: boxrder-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+section.chat_wrapper{
+    width: 100%;
+    padding: 50px;
+    background: #ffffffd2;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+}
+
+#brand_name{
+    padding: 20px;
+    background: rgb(39,72, 182);
+    display: flex;
+    align-items: center;
+}
+#brand_name h1{
+    text-transform: uppercase;
+}

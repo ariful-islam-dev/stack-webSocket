@@ -8,8 +8,22 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, "../public")));
 
-// const io = new Server();
+const httpServer = http.createServer(app);
+// Socket Connection
+const io = new Server(httpServer);
 
+io.on("connection", (socket)=>{
+    console.log("Socket Server connected")
+
+    socket.emit("message", "Welcome to chat app");
+    // socket.on("message", (message)=>{
+    //     console.log(message)
+    // })
+
+    io.on("disconnection", ()=>{
+        console.log("Socket Server disconnected")
+    })
+})
 
 // application route
 app.get("/", (req, res)=>{
@@ -29,7 +43,6 @@ app.use((error, _req, res, _next)=>{
     res.status(errorObj.status).json(errorObj)
 })
 
-const httpServer = http.createServer(app);
 
 httpServer.listen(4000, ()=>{
     console.log(`Server is Running http://localhost:4000`)

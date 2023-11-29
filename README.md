@@ -52,3 +52,15 @@ Primarily used for traditional web browsing. where a client requests a webpage, 
 - [ ] cors
 - [x] socket.io
 - [ ] nodemon -Dev
+
+## Folder Structure
+- public/
+  - views/
+- src/
+  - middleware/
+  - routes/
+  - service/
+  - utils/
+- .gitignore
+- package.json
+- README.md

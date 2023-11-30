@@ -15,14 +15,18 @@ const io = new Server(httpServer);
 io.on("connection", (socket)=>{
     console.log("Socket Server connected")
 
-    socket.emit("message", "Welcome to chat app");
-    // socket.on("message", (message)=>{
-    //     console.log(message)
-    // })
+    socket.on("message", (data)=>{
+        socket.broadcast.emit("send-message", data);
+    })
+
+    socket.on("activity", (name)=>{
+        socket.broadcast.emit("activity", name)
+    })
 
     io.on("disconnection", ()=>{
-        console.log("Socket Server disconnected")
+        console.log("Socket Server disconnected") 
     })
+    io.emit("all-message", "hello from socket server")
 })
 
 // application route

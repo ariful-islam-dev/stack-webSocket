@@ -3,7 +3,7 @@
 *{
     margin:0;
     padding:0;
-    box-sizing: boxrder-box;
+    box-sizing: border-box;
 }
 
 body{
@@ -24,4 +24,62 @@ section.chat_wrapper{
 }
 #brand_name h1{
     text-transform: uppercase;
+    color: #fff;
+}
+
+section.chat_wrapper {
+    height: 100vh;
+    background-position: scroll;
+}
+.main_board {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80%;
+}
+
+form#form {position: absolute;bottom: 0;display: block;}
+
+input#input_box {
+    width: 80%;
+    border:none;
+    padding: 20px;
+    font-size: 16px;
+    outline: none;
+    background: #FBFBFB;
+
+   
+}
+.message{
+    padding: 20px;
+    border-radius:4px;
+    margin-bottom:40px;
+    max-width: 300px;
+  
+    position: relative;
+}
+
+.receiving{
+    background: rgb(160, 182, 255);
+    color: #000;
+}
+
+.sending {
+    background: rgb(75, 114, 245);
+    color:#fff;
+    margin-left: auto;
+}
+
+.message h3{
+    top: -20px;
+    left: 0;
+    font-size: 14px;
+    color: #fff;
+    text-decoration: dotted;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+#message_area{
+    overflow: scroll;
 }
